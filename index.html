@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. V.S. Raghuvanshi's Bio Gyan Classes | Premium Online Biology</title>
+<style>
+    /* Bio Gyan Premium Brand Palette */
+    :root {
+        --brand-cobalt-deep: #05070a;
+        --brand-base-blue: #0a0e14;
+        --brand-accent-blue: #1e90ff;
+        --brand-leaf-green: #32cd32;
+        --brand-bulb-gold: #ffb01f;
+        --brand-gold-glow: rgba(255, 176, 31, 0.4);
+        --brand-white: #ffffff;
+        --brand-text-base: #a0a7b5;
+        --bg-card: #0d1117;
+        --bg-glass: rgba(13, 17, 23, 0.85);
+    }
+
+    /* Modern Layout Reset & UX Enhancements */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+        background-color: var(--brand-cobalt-deep);
+        color: var(--brand-white);
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    /* 1. FLOATING GLASS NAV */
+    nav {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.8rem 2rem;
+        background: var(--bg-glass);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+        z-index: 1100;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        text-decoration: none;
+    }
+
+    .logo-img {
+        height: 65px;
+        width: 65px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--brand-accent-blue);
+        box-shadow: 0 4px 10px rgba(30, 144, 255, 0.2);
+    }
+
+    .logo-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo-text .brand-name-short {
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--brand-white);
+        letter-spacing: -0.5px;
+    }
+
+    .logo-text .brand-name-short span {
+        color: var(--brand-bulb-gold);
+    }
+
+    .logo-text .brand-name-sub {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #ccc;
+        letter-spacing: 0.5px;
+    }
+
+    /* Contact Number & Social Icons Placement Styles */
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .header-socials {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding-right: 1.5rem;
+        border-right: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .social-icon-link {
+        color: var(--brand-text-base);
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .social-icon-link svg {
+        width: 24px;
+        height: 24px;
+        fill: currentColor;
+    }
+
+    .social-icon-link.yt { color: #ff0000; }
+    .social-icon-link.ig { color: #E1306C; }
+
+    .social-icon-link.yt:hover {
+        transform: scale(1.15);
+        filter: drop-shadow(0 0 12px rgba(255,0,0,0.6));
+    }
+    .social-icon-link.ig:hover {
+        transform: scale(1.15);
+        filter: drop-shadow(0 0 12px rgba(225,48,108,0.6));
+    }
+
+    .header-contact {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--brand-text-base);
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .header-contact:hover {
+        color: var(--brand-bulb-gold);
+    }
+
+    .contact-icon {
+        width: 16px;
+        height: 16px;
+        fill: currentColor;
+    }
+
+    .nav-btn {
+        background: var(--brand-accent-blue);
+        color: var(--brand-white);
+        padding: 0.6rem 1.5rem;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 700;
+        box-shadow: 0 0 15px rgba(30, 144, 255, 0.4);
+        transition: 0.3s;
+    }
+    .nav-btn:hover { box-shadow: 0 0 25px var(--brand-accent-blue); transform: scale(1.05); }
+
+    /* 2. HERO SECTION */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 8rem 5% 4rem;
+        background: radial-gradient(circle at 50% 30%, rgba(30, 144, 255, 0.1) 0%, var(--brand-cobalt-deep) 60%);
+        position: relative;
+    }
+
+    .pill-badge {
+        background: rgba(30, 144, 255, 0.1);
+        border: 1px solid var(--brand-accent-blue);
+        color: var(--brand-accent-blue);
+        padding: 0.5rem 1.2rem;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .hero h1 {
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        max-width: 900px;
+    }
+
+    .hero h1 span.highlight-gold { color: var(--brand-bulb-gold); }
+    .hero h1 span.highlight-green { color: var(--brand-leaf-green); }
+
+    .hero p {
+        font-size: 1.2rem;
+        color: var(--brand-text-base);
+        max-width: 650px;
+        margin-bottom: 3rem;
+    }
+
+    .optin-box {
+        background: var(--bg-card);
+        border: 1px solid rgba(255,255,255,0.1);
+        padding: 1rem;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 500px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+
+    .optin-box-inner {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .optin-box input {
+        flex: 1;
+        background: rgba(255,255,255,0.05);
+        border: none;
+        padding: 1rem;
+        border-radius: 8px;
+        color: white;
+        outline: none;
+    }
+
+    .optin-box button {
+        background: var(--brand-bulb-gold);
+        color: black;
+        border: none;
+        padding: 0 2rem;
+        border-radius: 8px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .optin-box button:hover { background: #e09b1a; box-shadow: 0 0 20px var(--brand-gold-glow); }
+
+    /* 3. STATS TICKER */
+    .ticker-wrap {
+        width: 100%;
+        background: linear-gradient(90deg, var(--brand-cobalt-deep) 0%, rgba(30, 144, 255, 0.05) 50%, var(--brand-cobalt-deep) 100%);
+        padding: 2.5rem 0;
+        overflow: hidden;
+        white-space: nowrap;
+        border-top: 1px solid rgba(255, 176, 31, 0.2);
+        border-bottom: 1px solid rgba(255, 176, 31, 0.2);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 30px rgba(0,0,0,0.8);
+    }
+    .ticker {
+        display: inline-block;
+        white-space: nowrap;
+        animation: ticker 30s linear infinite;
+        font-weight: 900;
+        font-size: 2rem;
+        color: rgba(255, 255, 255, 0.9);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+    }
+    @keyframes ticker { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-50%, 0, 0); } }
+
+    .ticker-item { margin: 0 4rem; }
+    .ticker-item span { color: var(--brand-accent-blue); text-shadow: 0 0 20px rgba(30, 144, 255, 0.6); }
+    .ticker-item.highlight span { color: var(--brand-leaf-green); text-shadow: 0 0 20px rgba(50, 205, 50, 0.5); }
+
+    /* 4. VIRAL BENTO GRID & GENERAL SECTIONS */
+    .section { padding: 8rem 5%; max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 4rem; }
+    .section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .section-header p { color: var(--brand-text-base); }
+
+    .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        grid-auto-rows: minmax(280px, auto);
+    }
+
+    /* Premium 3D Schedule Variables */
+    :root {
+        --vs-red: #cc0000;
+        --vs-gold: #f6e89e;
+        --vs-blue: #ccdfed;
+        --vs-white: #ffffff;
+    }
+
+    .bento-card {
+        background: var(--bg-card);
+        border: 1px solid rgba(255,255,255,0.05);
+        border-radius: 24px;
+        padding: 2.5rem 2rem;
+        position: relative;
+        overflow: hidden;
+        transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-height: 280px;
+    }
+
+    .bento-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(255,255,255,0.2);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    }
+
+    .bento-content { position: relative; z-index: 2; width: 100%; }
+    .schedule-card { padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.08); }
+    .schedule-card::before { background: linear-gradient(180deg, rgba(5,7,10,0.85) 0%, rgba(5,7,10,0.98) 100%); content: ''; position: absolute; top: 0; left: 0; right: 0; height: 100%; z-index: 1; }
+
+    .schedule-card h3 {
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: var(--vs-white);
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.5px;
+        text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    /* 3D Vibrant Neon Badges */
+    .time-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 18px;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(12px);
+        margin-bottom: 1.2rem;
+        text-transform: uppercase;
+    }
+    .time-badge svg { width: 14px; height: 14px; }
+
+    .vs-red-theme .time-badge { color: var(--vs-red); border: 1px solid rgba(204, 0, 0, 0.4); box-shadow: 0 0 20px rgba(204, 0, 0, 0.2), inset 0 0 10px rgba(204, 0, 0, 0.1); }
+    .vs-gold-theme .time-badge { color: var(--vs-gold); border: 1px solid rgba(246, 232, 158, 0.4); box-shadow: 0 0 20px rgba(246, 232, 158, 0.15), inset 0 0 10px rgba(246, 232, 158, 0.1); }
+    .vs-blue-theme .time-badge { color: var(--vs-blue); border: 1px solid rgba(204, 223, 237, 0.4); box-shadow: 0 0 20px rgba(204, 223, 237, 0.15), inset 0 0 10px rgba(204, 223, 237, 0.1); }
+
+    .feature-stack { display: flex; flex-direction: column; gap: 10px; margin-top: 1rem; }
+    .feature-item { display: flex; align-items: center; gap: 12px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); padding: 14px 16px; border-radius: 12px; transition: 0.3s cubic-bezier(0.25, 1, 0.5, 1); backdrop-filter: blur(5px); }
+    .schedule-card:hover .feature-item { border-color: rgba(255, 255, 255, 0.1); background: rgba(255, 255, 255, 0.05); }
+    .feature-item:hover { transform: translateX(8px); background: rgba(255, 255, 255, 0.1) !important; border-color: rgba(255, 255, 255, 0.25) !important; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+
+    .feat-icon { width: 18px; height: 18px; flex-shrink: 0; opacity: 0.9; }
+    .vs-red-theme .feat-icon { fill: var(--vs-red); }
+    .vs-gold-theme .feat-icon { fill: var(--vs-gold); }
+    .vs-blue-theme .feat-icon { fill: var(--vs-blue); }
+    .feat-text { font-size: 0.95rem; font-weight: 600; color: #e0e0e0; letter-spacing: 0.3px; }
+
+    /* 5. FULL-WIDTH CINEMATIC YOUTUBE SECTION */
+    .yt-promo {
+        background: linear-gradient(135deg, var(--bg-card) 0%, #05070a 100%);
+        border: 1px solid rgba(30, 144, 255, 0.15);
+        border-radius: 28px;
+        padding: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 3.5rem;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+        overflow: hidden;
+    }
+
+    .yt-text {
+        width: 100%;
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .yt-text h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 900; margin-bottom: 1.2rem; line-height: 1.2; letter-spacing: -0.5px; }
+    .yt-text h2 span { display: inline-block; color: #ff3333; text-shadow: 0 0 20px rgba(255,51,51,0.2); }
+    .yt-text p { color: var(--brand-text-base); margin-bottom: 2.5rem; max-width: 650px; font-size: 1.15rem; line-height: 1.6; }
+
+    .yt-btn {
+        background: #ff0000;
+        color: white;
+        padding: 1.1rem 2.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        transition: 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3);
+    }
+    .yt-btn:hover { box-shadow: 0 15px 35px rgba(255,0,0,0.5); transform: translateY(-3px); background: #e60000; }
+
+    .shorts-showcase-container {
+        width: 100%;
+        max-width: 1100px;
+        border-radius: 16px;
+        position: relative;
+        transform: perspective(1500px) rotateX(8deg);
+        transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 80px rgba(204, 0, 0, 0.2);
+        border: 1px solid rgba(255, 51, 51, 0.3);
+        background: #000;
+        z-index: 2;
+        margin-bottom: -1rem;
+    }
+
+    .shorts-showcase-container:hover {
+        transform: perspective(1500px) rotateX(0deg) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.9), 0 0 100px rgba(204, 0, 0, 0.35);
+    }
+
+    .shorts-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        opacity: 0.9;
+        transition: opacity 0.4s ease;
+        border-radius: 15px;
+    }
+
+    .shorts-showcase-container:hover .shorts-img { opacity: 1; }
+
+    .youtube-float-badge {
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        background: #cc0000;
+        color: #ffffff;
+        padding: 8px 20px;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        font-weight: 900;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        box-shadow: 0 10px 25px rgba(204,0,0,0.6);
+        border: 1px solid #ff4d4d;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        pointer-events: none;
+    }
+
+    .youtube-float-badge::before {
+        content: '';
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background: #fff;
+        border-radius: 50%;
+        animation: pulse-red 1.5s infinite;
+    }
+
+    /* 6. REVIEWS & TESTIMONIALS */
+    .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .review-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.05); padding: 2.5rem; border-radius: 20px; position: relative; }
+    .stars { color: var(--brand-bulb-gold); font-size: 1.5rem; margin-bottom: 1rem; letter-spacing: 2px; }
+    .review-text { font-style: italic; color: #d0d0d0; margin-bottom: 1.5rem; line-height: 1.7; }
+    .reviewer { display: flex; align-items: center; gap: 15px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; }
+    .reviewer-info h4 { color: var(--brand-white); font-size: 1rem; }
+    .reviewer-info span { color: var(--brand-text-base); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* 7. PREMIUM COURSE MATRIX */
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .price-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 3rem 2rem; position: relative; transition: 0.4s; }
+    .price-card.popular { border-color: var(--brand-bulb-gold); box-shadow: 0 0 30px var(--brand-gold-glow); transform: scale(1.02); }
+    .price-card:hover { border-color: var(--brand-accent-blue); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 40px rgba(30, 144, 255, 0.2) inset; }
+    .price-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--brand-bulb-gold); padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: 800; font-size: 0.8rem; color: black; }
+    .price-card h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .price-card .desc { color: var(--brand-text-base); margin-bottom: 2rem; display: block; }
+    .price-card ul { list-style: none; margin-bottom: 3rem; }
+    .price-card li { margin-bottom: 1rem; color: #e0e0e0; display: flex; align-items: center; gap: 10px; }
+    .price-card li::before { content: '✓'; color: var(--brand-leaf-green); font-weight: bold; }
+
+    .price-btn { display: block; width: 100%; padding: 1rem; text-align: center; background: rgba(30, 144, 255, 0.1); border: 2px solid var(--brand-accent-blue); color: var(--brand-white); border-radius: 8px; font-weight: 800; text-decoration: none; transition: 0.3s; }
+    .price-card.popular .price-btn { background: var(--brand-bulb-gold); border-color: var(--brand-bulb-gold); color: black; }
+    .price-card .price-btn:hover { background: var(--brand-accent-blue); box-shadow: 0 5px 15px rgba(30, 144, 255, 0.4); }
+    .price-card.popular .price-btn:hover { background: #e09b1a; box-shadow: 0 5px 15px var(--brand-gold-glow); }
+
+    /* 8. MENTOR SECTION */
+    .mentor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; background: rgba(30, 144, 255, 0.03); border: 1px solid rgba(30, 144, 255, 0.1); padding: 4rem; border-radius: 24px; }
+    .mentor-text h2 { font-size: 2.2rem; color: var(--brand-accent-blue); margin-bottom: 1rem; }
+    .mentor-text h3 { font-size: 1.5rem; color: #ccc; margin-bottom: 0.5rem; }
+    .mentor-text p { color: var(--brand-text-base); margin-bottom: 1.5rem; }
+    .mentor-image { width: 100%; aspect-ratio: 1; background: var(--bg-card); border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+    .mentor-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.5s ease; }
+    .mentor-image:hover img { transform: scale(1.05); }
+
+    /* 3D DIAGRAM SHOWCASE STYLES */
+    .diagram-showcase {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 4rem;
+        align-items: center;
+        background: linear-gradient(135deg, rgba(13,17,23,0.9), rgba(5,7,10,0.95));
+        border: 1px solid rgba(204, 223, 237, 0.1);
+        border-radius: 24px;
+        padding: 4rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ambient-glow { position: absolute; border-radius: 50%; filter: blur(90px); z-index: 0; }
+    .glow-red { top: -50px; left: -50px; width: 250px; height: 250px; background: #cc0000; opacity: 0.12; }
+    .glow-blue { bottom: -50px; right: -50px; width: 300px; height: 300px; background: #ccdfed; opacity: 0.08; }
+
+    .diagram-text { position: relative; z-index: 2; }
+    .art-badge { display: inline-block; padding: 6px 16px; background: rgba(246, 232, 158, 0.08); border: 1px solid #f6e89e; color: #f6e89e; border-radius: 30px; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1.5rem; box-shadow: 0 0 15px rgba(246, 232, 158, 0.15); }
+    .diagram-text h2 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 1.2rem; line-height: 1.1; }
+    .highlight-blue { color: #ccdfed; text-shadow: 0 0 15px rgba(204, 223, 237, 0.3); }
+    .diagram-text p { color: var(--brand-text-base); font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem; }
+
+    .feature-list { display: flex; flex-direction: column; gap: 1rem; }
+    .feat-row { display: flex; align-items: center; gap: 15px; }
+    .feat-row span { color: #ffffff; font-weight: 600; font-size: 1.05rem; }
+    .icon-box { width: 45px; height: 45px; border-radius: 12px; display: flex; justify-content: center; align-items: center; font-size: 1.3rem; }
+
+    .red-box { background: rgba(204, 0, 0, 0.15); border: 1px solid #cc0000; color: #cc0000; }
+    .gold-box { background: rgba(246, 232, 158, 0.15); border: 1px solid #f6e89e; color: #f6e89e; }
+    .blue-box { background: rgba(204, 223, 237, 0.15); border: 1px solid #ccdfed; color: #ccdfed; }
+
+    .diagram-image-container { perspective: 1200px; position: relative; z-index: 2; width: 100%; }
+    .diagram-grid-wrapper { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 280px 90px; gap: 12px; transform: rotateY(-12deg) rotateX(4deg); transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); position: relative; }
+    .diagram-image-container:hover .diagram-grid-wrapper { transform: rotateY(-2deg) rotateX(2deg) scale(1.02); }
+
+    .grid-img-box { border-radius: 12px; border: 2px solid rgba(204, 223, 237, 0.3); overflow: hidden; background: #000; box-shadow: -10px 10px 25px rgba(0,0,0,0.8); position: relative; transition: all 0.3s ease; }
+    .grid-img-box.master-view { grid-column: span 4; border-color: #ccdfed; box-shadow: -20px 20px 40px rgba(0,0,0,0.8), 0 0 30px rgba(204, 0, 0, 0.15); }
+    .grid-img-box img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: all 0.4s ease; }
+    .grid-img-box.master-view img { opacity: 0.95; }
+    .grid-img-box:hover { border-color: #f6e89e; box-shadow: 0 0 20px rgba(246, 232, 158, 0.3); transform: translateY(-3px); z-index: 10; }
+    .grid-img-box.thumb-select { cursor: pointer; }
+    .grid-img-box.thumb-select:active { transform: scale(0.95); }
+    .grid-img-box:hover img { opacity: 1; transform: scale(1.08); }
+
+    @keyframes flashUpdate { 0% { filter: brightness(2) blur(4px); opacity: 0.4; } 100% { filter: brightness(1) blur(0); opacity: 0.95; } }
+    .flash-anim { animation: flashUpdate 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+
+    .glass-caption { position: absolute; top: 15px; left: 15px; background: rgba(13, 17, 23, 0.85); color: #ffffff; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.1); pointer-events: none; }
+    .floating-tag { position: absolute; bottom: -15px; right: -15px; background: rgba(204, 0, 0, 0.95); border: 1px solid #cc0000; padding: 12px 24px; border-radius: 30px; font-weight: 800; color: #ffffff; transform: translateZ(60px); box-shadow: 0 15px 30px rgba(0,0,0,0.6), 0 0 20px rgba(204, 0, 0, 0.4); backdrop-filter: blur(10px); transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); z-index: 20; }
+    .diagram-image-container:hover .floating-tag { transform: translateZ(90px) translateY(-5px); }
+
+    /* 9. PREMIUM FOOTER */
+    .premium-footer { background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.05); padding: 4rem 5% 2rem; margin-top: 4rem; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
+    .footer-brand h2 { font-size: 2rem; margin-bottom: 1rem; font-weight: 900; }
+    .footer-brand h2 span { color: var(--brand-bulb-gold); }
+    .footer-brand p { color: var(--brand-text-base); font-size: 0.95rem; line-height: 1.6; }
+    .footer-links, .footer-social { display: flex; flex-direction: column; gap: 0.8rem; }
+    .footer-links h3, .footer-social h3 { color: var(--brand-white); margin-bottom: 0.5rem; font-size: 1.2rem; }
+    .footer-links a, .footer-social a { color: var(--brand-text-base); text-decoration: none; transition: all 0.3s ease; font-size: 0.95rem; }
+    .footer-links a:hover, .footer-social a:hover { color: var(--brand-bulb-gold); padding-left: 5px; }
+    .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); color: #666; font-size: 0.85rem; }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: #FFF; border-radius: 50px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 1000; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; animation: pulse-wa 2s infinite; }
+    .whatsapp-float:hover { transform: scale(1.1) translateY(-5px); background-color: #1ebe57; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6); }
+
+    @keyframes pulse-wa { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+    @keyframes pulse-red { 0% { box-shadow: 0 0 0 0 rgba(255, 51, 51, 0.7); } 70% { box-shadow: 0 0 0 6px rgba(255, 51, 51, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 51, 51, 0); } }
+
+    /* FAQ Section Styles */
+    .faq-container { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+    .faq-item { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; transition: all 0.3s ease; }
+    .faq-item summary { padding: 1.5rem; font-size: 1.1rem; font-weight: 700; color: var(--brand-white); cursor: pointer; list-style: none; position: relative; display: flex; justify-content: space-between; align-items: center; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; color: var(--brand-accent-blue); font-size: 1.5rem; transition: transform 0.3s ease; }
+    .faq-item[open] summary::after { transform: rotate(45deg); color: var(--brand-bulb-gold); }
+    .faq-item[open] { border-color: rgba(30, 144, 255, 0.3); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+    .faq-content { padding: 0 1.5rem 1.5rem; color: var(--brand-text-base); font-size: 0.95rem; line-height: 1.7; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 0.5rem; padding-top: 1rem; }
+
+    /* Viral Social Proof Toast */
+    .fomo-toast { position: fixed; bottom: 30px; left: 30px; background: rgba(13, 17, 23, 0.95); border: 1px solid rgba(50, 205, 50, 0.3); border-left: 4px solid var(--brand-leaf-green); padding: 12px 20px; border-radius: 8px; display: flex; align-items: center; gap: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 1000; opacity: 0; transform: translateY(100px); transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease; pointer-events: none; }
+    .toast-icon { background: rgba(50, 205, 50, 0.1); color: var(--brand-leaf-green); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+    .toast-text p { margin: 0; font-size: 0.85rem; color: #fff; text-align: left; }
+    .toast-text span { font-size: 0.7rem; color: var(--brand-text-base); display: block; text-align: left; }
+
+    /* ==========================================================================
+       📱 COMPREHENSIVE MOBILE RESPONSIVENESS OVERRIDES
+       ========================================================================== */
+
+    @media (max-width: 992px) {
+        .yt-promo { padding: 3rem 2rem; gap: 2.5rem; }
+        .bento-grid { grid-template-columns: 1fr; }
+        .bento-card { grid-column: span 1 !important; padding: 2.5rem 1.5rem; }
+        .diagram-showcase { grid-template-columns: 1fr; padding: 3rem 2rem; gap: 3rem; }
+        .mentor-grid { grid-template-columns: 1fr; padding: 3rem 2rem; }
+    }
+
+    @media (max-width: 768px) {
+        /* General Spacing Reductions */
+        .section { padding: 4rem 5% !important; } /* Stops huge dead spaces on mobile */
+        .section-header h2 { font-size: 2rem; }
+        .section-header { margin-bottom: 2.5rem; }
+
+        /* Navigation Condensing */
+        nav { padding: 0.6rem 1rem; width: 95%; top: 15px; }
+        .logo-img { width: 45px; height: 45px; }
+        .logo-text .brand-name-short { font-size: 1.2rem; }
+        .logo-text .brand-name-sub { display: none; } /* Hide sub-text to save space */
+        .header-socials { padding-right: 0.8rem; gap: 10px; border-right: none; }
+        .header-contact span { display: none; } /* Hide phone number text, keep icon */
+        .nav-actions { gap: 1rem; }
+        .nav-btn { display: none; } /* Hide 'View Batches' to prevent wrapping */
+
+        /* Hero Adjustments */
+        .hero { padding: 8rem 5% 4rem; }
+        .optin-box-inner { flex-direction: column; } /* Stack input and button vertically */
+        .optin-box button { padding: 1rem; width: 100%; }
+
+        /* Ticker Shrink */
+        .ticker { font-size: 1.2rem; animation-duration: 20s; }
+        .ticker-wrap { padding: 1.2rem 0; }
+        .ticker-item { margin: 0 2rem; }
+
+        /* Flatten 3D Elements to Prevent Horizontal Scrolling/Clipping on Phones */
+        .shorts-showcase-container,
+        .diagram-grid-wrapper {
+            transform: none !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+        }
+
+        .diagram-text h2 { font-size: 2.2rem; }
+        .floating-tag { bottom: 10px; right: 10px; padding: 8px 16px; font-size: 0.75rem; transform: none !important; }
+        .youtube-float-badge { top: -10px; right: -10px; padding: 6px 14px; font-size: 0.7rem; }
+
+        /* PTM Section */
+        .section[style*="padding: 4rem 5%"] { padding: 3rem 5% !important; }
+        .section[style*="padding: 4rem 5%"] h2 { font-size: 1.8rem !important; }
+
+        /* Floating Buttons Adjustment */
+        .whatsapp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; }
+        .fomo-toast { bottom: 90px; left: 20px; right: 20px; padding: 10px; }
+    }
+
+    @media (max-width: 480px) {
+        /* Extra small devices (Older iPhones) */
+        .diagram-grid-wrapper { grid-template-rows: 200px 60px; gap: 8px; }
+        .hero h1 { font-size: 2.2rem; }
+        .price-card { padding: 2rem 1.5rem; }
+        .yt-promo { padding: 2.5rem 1.5rem; }
+    }
+</style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo-container">
+            <img src="Biogyan Logo.jpeg" alt="Bio Gyan Logo" class="logo-img">
+            <div class="logo-text">
+                <span class="brand-name-short">Bio <span>Gyan</span></span>
+                <span class="brand-name-sub">Dr. V.S. Raghuvanshi's Classes</span>
+            </div>
+        </a>
+
+        <div class="nav-actions">
+            <div class="header-socials">
+                <a href="https://www.instagram.com/biogyan08/" target="_blank" class="social-icon-link ig" title="Instagram Reels">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm3.975-9.458a1.239 1.239 0 11-2.478 0 1.239 1.239 0 012.478 0z"/></svg>
+                </a>
+                <a href="https://www.youtube.com/@biogyan08" target="_blank" class="social-icon-link yt" title="YouTube Channel">
+                    <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+            </div>
+
+            <a href="tel:+919896490308" class="header-contact" title="Call Admissions">
+                <svg class="contact-icon" viewBox="0 0 24 24">
+                    <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.62c0-.55-.45-1-1-1z"/>
+                </svg>
+                <span>+91 98964 90308</span>
+            </a>
+
+            <a href="#courses" class="nav-btn">View Batches</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="pill-badge">Premium Digital Ecosystem</div>
+        <h1>Stop Memorizing. <br><span class="highlight-green">Visualize</span> Biology. <span class="highlight-gold">Crack NEET.</span></h1>
+        <p>India's most trusted Biology curriculum is now a premium digital platform. Experience visual, conceptual learning that guarantees 95%+ in boards and top ranks in NEET.</p>
+
+        <form id="demoForm" class="optin-box">
+            <div class="optin-box-inner">
+                <input type="tel" id="waNumber" placeholder="Enter WhatsApp Number" required>
+                <button type="submit" id="submitBtn">Unlock Free Demo</button>
+            </div>
+            <div style="text-align: left; font-size: 0.8rem; color: var(--brand-bulb-gold); margin-top: 8px; display: flex; align-items: center; gap: 5px; font-weight: 600;">
+                <span style="display: inline-block; width: 8px; height: 8px; background: #ff3333; border-radius: 50%; animation: pulse-red 1.5s infinite;"></span>
+                Only 12 spots left for Sunday's Masterclass
+            </div>
+        </form>
+
+        <div id="successMessage" style="display: none; background: rgba(50, 205, 50, 0.1); border: 1px solid var(--brand-leaf-green); padding: 1rem; border-radius: 12px; margin-top: 1rem; max-width: 500px; width: 100%; text-align: left;">
+            <h4 style="color: var(--brand-leaf-green); margin-bottom: 5px;">✅ Link Sent Successfully!</h4>
+            <p style="font-size: 0.9rem; color: #ccc; margin: 0;">Check your WhatsApp. While you wait, <a href="#" style="color: var(--brand-bulb-gold); font-weight: bold;">Join our Telegram Group</a> for free daily PYQs.</p>
+        </div>
+    </section>
+
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <span class="ticker-item">🏆 <span>20+ Years</span> Excellence Legacy</span>
+            <span class="ticker-item highlight">🧬 <span>5000+</span> Selections in NEET</span>
+            <span class="ticker-item">📈 <span>95%+</span> Average Board Score</span>
+            <span class="ticker-item highlight">🏆 <span>20+ Years</span> Excellence Legacy</span>
+            <span class="ticker-item">🧬 <span>5000+</span> Selections in NEET</span>
+            <span class="ticker-item highlight">📈 <span>95%+</span> Average Board Score</span>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>The Bio Gyan Digital Ecosystem</h2>
+            <p>Structured daily schedules designed for maximum retention and discipline.</p>
+        </div>
+
+        <div class="bento-grid">
+            <div class="bento-card bento-1 schedule-card vs-red-theme" style="grid-column: span 1;">
+                <div class="bento-content">
+                    <span class="time-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                        3:00 PM - 4:00 PM
+                    </span>
+                    <h3>11th Online</h3>
+                    <div class="feature-stack">
+                        <div class="feature-item"><svg class="feat-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg><span class="feat-text">Live Class</span></div>
+                        <div class="feature-item"><svg class="feat-icon" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg><span class="feat-text">Daily Practice Paper (DPP)</span></div>
+                        <div class="feature-item"><svg class="feat-icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span class="feat-text">Weekly Test</span></div>
+                        <div class="feature-item"><svg class="feat-icon" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg><span class="feat-text">Weekly Doubt Session</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-card bento-2 schedule-card vs-gold-theme" style="grid-column: span 1;">
+                <div class="bento-content">
+                    <span class="time-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                        4:15 PM - 5:15 PM
+                    </span>
+                    <h3>12th Online</h3>
+                    <div class="feature-stack">
+                        <div class="feature-item"><svg class="feat-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg><span class="feat-text">Live Class</span></div>
+                        <div class="feature-item"><svg class="feat-icon" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg><span class="feat-text">Daily Practice Paper (DPP)</span></div>
+                        <div class="feature-item"><svg class="feat-icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span class="feat-text">Weekly Test</span></div>
+                        <div class="feature-item"><svg class="feat-icon" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg><span class="feat-text">Weekly Doubt Session</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-card bento-3 schedule-card vs-blue-theme" style="grid-column: span 1;">
+                <div class="bento-content">
+                    <span class="time-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                        5:30 PM - 6:30 PM
+                    </span>
+                    <h3>Dropper</h3>
+                    <div class="feature-stack">
+                        <div class="feature-item"><svg class="feat-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg><span class="feat-text">Live Class</span></div>
+                        <div class="feature-item"><svg class="feat-icon" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg><span class="feat-text">Daily Practice Paper (DPP)</span></div>
+                        <div class="feature-item"><svg class="feat-icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span class="feat-text">Weekly Test</span></div>
+                        <div class="feature-item"><svg class="feat-icon" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg><span class="feat-text">Weekly Doubt Session</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section" style="padding: 4rem 5%;">
+        <div style="background: linear-gradient(135deg, var(--bg-card) 0%, var(--brand-cobalt-deep) 100%); border: 1px solid rgba(30, 144, 255, 0.2); border-radius: 24px; padding: 4rem; text-align: center; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); position: relative; overflow: hidden;">
+
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.03; background-image: linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+            <div style="position: relative; z-index: 2;">
+                <span style="background: rgba(255, 176, 31, 0.1); border: 1px solid var(--brand-bulb-gold); color: var(--brand-bulb-gold); padding: 6px 18px; border-radius: 30px; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 1.5rem; display: inline-block; letter-spacing: 1px;">🤝 Exclusive Parent-Teacher Connect</span>
+
+                <h2 style="font-size: 2.5rem; color: var(--brand-white); font-weight: 900; margin-bottom: 1rem; line-height: 1.2;">Your Child's Success is a <span style="color: var(--brand-accent-blue);">Collaborative Journey</span></h2>
+
+                <p style="color: var(--brand-text-base); font-size: 1.1rem; max-width: 700px; margin: 0 auto 2rem; line-height: 1.6;">Cracking NEET requires absolute transparency between mentors and parents. We host regular, one-on-one virtual feedback sessions to ensure your child stays disciplined, motivated, and on the winning path.</p>
+
+                <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2.5rem;">
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 10px 20px; border-radius: 12px; color: #ccc; font-size: 0.9rem; font-weight: 600; backdrop-filter: blur(5px);">📊 Mock Test Analytics</div>
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 10px 20px; border-radius: 12px; color: #ccc; font-size: 0.9rem; font-weight: 600; backdrop-filter: blur(5px);">🧠 Psychological Well-being</div>
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 10px 20px; border-radius: 12px; color: #ccc; font-size: 0.9rem; font-weight: 600; backdrop-filter: blur(5px);">🎯 Rank-Boosting Strategy</div>
+                </div>
+
+                <a href="#demoForm" style="background: var(--brand-accent-blue); color: var(--brand-white); padding: 1.2rem 2.8rem; border-radius: 50px; font-size: 1.1rem; font-weight: 800; text-decoration: none; display: inline-block; box-shadow: 0 10px 25px rgba(30, 144, 255, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 35px rgba(30, 144, 255, 0.5)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(30, 144, 255, 0.3)';">Speak With Teacher Directly</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="yt-promo">
+            <div class="yt-text">
+                <h2>Viral Field Biology on <span>YouTube Shorts</span></h2>
+                <p>Biology isn't just learned on a blackboard. Subscribe to our official channel to watch Dr. Raghuvanshi decode complex NCERT concepts live from the field. High-yield, 60-second visual crash courses designed for ultimate retention.</p>
+                <a href="https://www.youtube.com/@biogyan08" target="_blank" class="yt-btn">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    Subscribe to BioGyan Channel
+                </a>
+            </div>
+
+            <div class="shorts-showcase-container">
+                <img src="Youtube videos .jpg" alt="Viral BioGyan YouTube Shorts" class="shorts-img">
+                <div class="youtube-float-badge">
+                    Daily 60-Second Concepts
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="section">
+        <div class="section-header">
+            <h2>Select Your Target Batch</h2>
+            <p>Admissions closing shortly for the next session.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Class 11th Base</h3>
+                <span class="desc">Build the ultimate foundation.</span>
+                <ul>
+                    <li>Plant & Human Physiology Mastery</li>
+                    <li>Live 3D Interactive Sessions</li>
+                    <li>Weekly Concept Check Tests</li>
+                </ul>
+                <a href="#" class="price-btn">Enroll Now</a>
+            </div>
+
+            <div class="price-card popular">
+                <div class="price-badge">NEET FOCUS</div>
+                <h3>The Ultimate Dropper</h3>
+                <span class="desc">Aggressive rank-boosting curriculum.</span>
+                <ul>
+                    <li>Complete 11th + 12th Syllabus</li>
+                    <li>Daily Practice Papers (DPPs)</li>
+                    <li>All India Mock Test Series</li>
+                    <li>Negative Marking Strategy Docs</li>
+                </ul>
+                <a href="#" class="price-btn">Enroll Now</a>
+            </div>
+
+            <div class="price-card">
+                <h3>Class 12th Boards</h3>
+                <span class="desc">Secure 95%+ in Boards.</span>
+                <ul>
+                    <li>Genetics & Ecology Deep-Dive</li>
+                    <li>Previous Year Question Bank</li>
+                    <li>Subjective Answer Writing Checks</li>
+                </ul>
+                <a href="#" class="price-btn">Enroll Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="diagram-showcase">
+            <div class="ambient-glow glow-red"></div>
+            <div class="ambient-glow glow-blue"></div>
+
+            <div class="diagram-text">
+                <span class="art-badge">🎨 The Art of Biology</span>
+                <h2>Famous <span class="highlight-blue">Smartboard</span> Masterpieces</h2>
+
+                <p>Dr. Raghuvanshi is legendary for his breathtaking, hand-drawn diagrams. We do not just read passively from slides—we construct complex physiological pathways in real-time, right in front of you using BioGyan's 4K digital board ecosystem.</p>
+
+                <div class="feature-list">
+                    <div class="feat-row">
+                        <div class="icon-box red-box">🧠</div>
+                        <span>Photographic Memory Retention</span>
+                    </div>
+                    <div class="feat-row">
+                        <div class="icon-box gold-box">⚡</div>
+                        <span>Real-Time Concept Building</span>
+                    </div>
+                    <div class="feat-row">
+                        <div class="icon-box blue-box">📸</div>
+                        <span>4K High-Resolution Board Exports</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="diagram-image-container">
+                <div class="diagram-grid-wrapper">
+
+                    <div class="grid-img-box master-view">
+                        <img id="master-img" src="board image 1.jpeg" alt="VidyaSaarthi Smartboard Diagram">
+                        <div id="master-title" class="glass-caption"></div>
+                    </div>
+
+                    <div class="grid-img-box thumb-select" onclick="changeMasterImage('board image 2.jpeg', '')">
+                        <img src="board image 2.jpeg" alt="VidyaSaarthi Diagram 1">
+                    </div>
+
+                    <div class="grid-img-box thumb-select" onclick="changeMasterImage('board image 3.jpeg', '')">
+                        <img src="board image 3.jpeg" alt="VidyaSaarthi Diagram 2">
+                    </div>
+
+                    <div class="grid-img-box thumb-select" onclick="changeMasterImage('board image 4.jpeg', '')">
+                        <img src="board image 4.jpeg" alt="VidyaSaarthi Diagram 3">
+                    </div>
+
+                    <div class="grid-img-box thumb-select" onclick="changeMasterImage('board image 5.jpeg', '')">
+                        <img src="board image 5.jpeg" alt="VidyaSaarthi Diagram 4">
+                    </div>
+
+                    <div class="floating-tag">
+                        BioGyan 4K Ecosystem
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Trusted by Aspirants & Parents</h2>
+            <p>Our academic legacy speaks through our students' results.</p>
+        </div>
+
+        <div class="review-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"The way genetics and molecular basis of inheritance were visualized in class made it impossible to forget. Scored 340/360 in NEET Biology!"</p>
+                <div class="reviewer">
+                    <div class="reviewer-info">
+                        <h4>Aman Verma</h4>
+                        <span>NEET Aspirant (Dropper Batch)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"We were initially hesitant about online classes, but the structured doubt-solving and strict discipline here is world-class. Highly recommended."</p>
+                <div class="reviewer">
+                    <div class="reviewer-info">
+                        <h4>Mrs. Sharma</h4>
+                        <span>Parent of 12th Board Student</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"The NCERT line decoder strategy saved my life. I used to lose marks in Assertion-Reasoning, but sir's approach hacked the NTA mindset completely."</p>
+                <div class="reviewer">
+                    <div class="reviewer-info">
+                        <h4>Priya S.</h4>
+                        <span>Class 11th Foundation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="mentor-grid">
+            <div class="mentor-text">
+                <h2>The Force Behind the Ranks</h2>
+                <h3>Dr. V.S. Raghuvanshi</h3>
+                <p>For over two decades, we have been the premier destination for cracking complex medical entrance examinations. Now, we are breaking geographical barriers to empower students nationwide.</p>
+                <p>Every lecture, 3D structure layout, and tracking matrix is personally curated to map directly to the exact psychology of modern examiners. High-yield, outcome-driven biology instruction.</p>
+            </div>
+            <div class="mentor-image">
+                <img src="V.S. Raghuvanshi 2.png" alt="Dr. V.S. Raghuvanshi, Biology Expert">
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything you need to know about the Bio Gyan digital ecosystem.</p>
+        </div>
+        <div class="faq-container">
+            <details class="faq-item">
+                <summary>Are the classes live or pre-recorded?</summary>
+                <div class="faq-content">All premium batches feature 100% LIVE interactive classes. We believe in real-time concept visualization and immediate doubt clearing. Recordings are provided on the portal immediately after the class for revision.</div>
+            </details>
+            <details class="faq-item">
+                <summary>How does the 24/7 Doubt Engine work?</summary>
+                <div class="faq-content">Whenever you are stuck on a question, simply click a photo and upload it to your student dashboard. Our expert panel will reply with a structured text, audio, or video solution within a few hours.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Is the study material aligned with the latest NTA NEET syllabus?</summary>
+                <div class="faq-content">Yes. Our curriculum is strictly updated to match the latest rationalized NCERT syllabus and NTA guidelines, focusing heavily on Assertion-Reasoning and Statement-based questions.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Can parents track the student's progress?</summary>
+                <div class="faq-content">Absolutely. Parents receive weekly WhatsApp reports detailing mock test scores, class attendance, and overall rank progression.</div>
+            </details>
+        </div>
+    </section>
+
+    <footer class="premium-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>Bio<span>Gyan</span></h2>
+                <p>Dr. V.S. Raghuvanshi's Classes.<br>Elevating Biology Education for 11th, 12th, and NEET aspirants.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#courses">Explore Batches</a>
+                <a href="#">Book Free Demo</a>
+                <a href="#">Student Portal Login</a>
+            </div>
+
+            <div class="footer-social">
+                <h3>Connect With Us</h3>
+                <a href="#">Instagram (Viral Reels)</a>
+                <a href="#">YouTube Channel</a>
+                <a href="#">WhatsApp Support</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 DR. V.S. RAGHUVANSHI'S BIO GYAN CLASSES. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="fomoToast" class="fomo-toast"></div>
+
+    <a href="https://wa.me/919896490308?text=Hello%20Dr.%20Raghuvanshi,%20I%20would%20like%20to%20know%20more%20about%20Bio%20Gyan%20Classes." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" width="35" height="35" fill="white">
+            <path d="M16.002 0c-8.835 0-16 7.163-16 16 0 2.827.737 5.485 2.035 7.825L.5 31.5l7.917-1.468c2.28 1.157 4.86 1.805 7.585 1.805 8.834 0 16-7.165 16-16s-7.166-16-16-16zm7.98 22.846c-.333.94-1.745 1.705-2.587 1.847-.704.118-1.61.196-2.585-.126-.583-.195-1.332-.47-2.31-.885-4.14-1.76-6.815-6.02-7.02-6.295-.206-.275-1.68-2.235-1.68-4.26 0-2.025 1.055-3.018 1.43-3.41.376-.39.816-.488 1.087-.488.272 0 .543.003.784.015.253.012.593-.095.928.714.354.856 1.208 2.946 1.316 3.16.11.215.18.467.045.74-.136.275-.205.44-.41.686-.204.246-.425.53-.614.715-.206.204-.422.427-.186.83.236.405 1.048 1.733 2.25 2.8 1.55 1.378 2.85 1.8 3.257 1.996.406.196.643.165.885-.11.242-.275 1.04-1.21 1.314-1.624.273-.414.545-.345.91-.205.365.138 2.31 1.09 2.705 1.288.396.196.66.294.756.46.096.166.096.96-.237 1.9z"/>
+        </svg>
+    </a>
+
+    <script>
+        // 1. LEAD CAPTURE PIPELINE
+        document.getElementById('demoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const btn = document.getElementById('submitBtn');
+            const waNumber = document.getElementById('waNumber').value;
+            const form = document.getElementById('demoForm');
+            const successMsg = document.getElementById('successMessage');
+
+            btn.innerHTML = 'Unlocking...';
+            btn.style.opacity = '0.7';
+            btn.style.pointerEvents = 'none';
+
+            setTimeout(() => {
+                form.style.display = 'none';
+                successMsg.style.display = 'block';
+                successMsg.style.opacity = '0';
+
+                setTimeout(() => {
+                    successMsg.style.transition = 'opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+                    successMsg.style.opacity = '1';
+                }, 20);
+
+                console.log("------------------------------------------");
+                console.log("[DATA CAPTURED]: WhatsApp String Saved -> " + waNumber);
+                console.log("Status: Route execution successful inside tracker lifecycle.");
+                console.log("------------------------------------------");
+            }, 800);
+        });
+
+        // 2. DYNAMIC SOCIAL PROOF NOTIFICATION ENGINE
+        const studentNames = ["Aarav Sharma", "Ananya Iyer", "Rohan Verma", "Diya Patel", "Ishaan Kapoor", "Meera Nair", "Aditya Joshi", "Sneha Reddy", "Kabir Malhotra", "Kriti Saxena"];
+        const batchSelections = ["unlocked the Free Masterclass", "downloaded the NCERT Line Decoder Notes", "reserved a spot for the NEET Booster batch", "joined the 11th Foundation demo session"];
+        const timeIntervals = ["just now", "2 minutes ago", "5 minutes ago", "1 minute ago", "4 minutes ago"];
+
+        function triggerDynamicNotification() {
+            const toast = document.getElementById('fomoToast');
+
+            const randomName = studentNames[Math.floor(Math.random() * studentNames.length)];
+            const randomBatch = batchSelections[Math.floor(Math.random() * batchSelections.length)];
+            const randomTime = timeIntervals[Math.floor(Math.random() * timeIntervals.length)];
+
+            toast.innerHTML = `
+                <div class="toast-icon">✓</div>
+                <div class="toast-text">
+                    <p><strong>${randomName}</strong> ${randomBatch}.</p>
+                    <span>${randomTime}</span>
+                </div>
+            `;
+
+            toast.style.opacity = '1';
+            toast.style.transform = 'translateY(0)';
+
+            setTimeout(() => {
+                toast.style.transform = 'translateY(100px)';
+                toast.style.opacity = '0';
+            }, 5000);
+        }
+
+        setTimeout(triggerDynamicNotification, 3000);
+        setInterval(triggerDynamicNotification, 15000);
+
+        // 3. HIGH-PERFORMANCE IMAGE PRELOADER
+        const imagesToPreload = [
+            'board image 1.jpeg',
+            'board image 2.jpeg',
+            'board image 3.jpeg',
+            'board image 4.jpeg',
+            'board image 5.jpeg'
+        ];
+
+        imagesToPreload.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        // 4. 3D GALLERY SWAPPER CONTROLLER
+        function changeMasterImage(newSrc, newTitle) {
+            const masterImg = document.getElementById('master-img');
+            const masterTitle = document.getElementById('master-title');
+
+            masterTitle.innerText = newTitle;
+
+            masterImg.classList.remove('flash-anim');
+            void masterImg.offsetWidth;
+            masterImg.classList.add('flash-anim');
+
+            masterImg.src = newSrc;
+        }
+    </script>
+</body>
+</html>
