@@ -488,22 +488,50 @@
     .reviewer-info h4 { color: var(--brand-white); font-size: 1rem; }
     .reviewer-info span { color: var(--brand-text-base); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
 
-    /* 7. PREMIUM COURSE MATRIX */
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-    .price-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 3rem 2rem; position: relative; transition: 0.4s; }
-    .price-card.popular { border-color: var(--brand-bulb-gold); box-shadow: 0 0 30px var(--brand-gold-glow); transform: scale(1.02); }
+    /* 7. PREMIUM COURSE MATRIX (Aggressive Dropper Marketing) */
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: center; }
+    .price-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 3rem 2rem; position: relative; transition: 0.4s; z-index: 1; }
+
+    /* The Dropper Card Aggressive Overhaul */
+    .price-card.popular {
+        border: 2px solid #ff3333;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 40px rgba(255, 51, 51, 0.25) inset;
+        transform: scale(1.08);
+        z-index: 10;
+        background: linear-gradient(180deg, #0d1117 0%, #1a0505 100%);
+    }
+
     .price-card:hover { border-color: var(--brand-accent-blue); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 40px rgba(30, 144, 255, 0.2) inset; }
-    .price-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--brand-bulb-gold); padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: 800; font-size: 0.8rem; color: black; }
+
+    /* Ensure the scale jump stacks beautifully on hover */
+    .price-card.popular:hover {
+        border-color: #ff4d4d;
+        transform: scale(1.1) translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0,0,0,0.9), 0 0 60px rgba(255, 51, 51, 0.4) inset;
+    }
+
+    .price-badge { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); background: var(--brand-bulb-gold); padding: 0.6rem 1.8rem; border-radius: 30px; font-weight: 900; font-size: 0.85rem; color: black; white-space: nowrap; letter-spacing: 1px; }
+
+    /* Pulse Animation for Dropper Badge */
+    .price-card.popular .price-badge { background: #ff3333; color: white; border: 1px solid #ff4d4d; animation: pulse-red 2s infinite; }
+
     .price-card h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
-    .price-card .desc { color: var(--brand-text-base); margin-bottom: 2rem; display: block; }
+    .price-card.popular h3 { font-size: 2.2rem; color: #ffffff; text-shadow: 0 0 15px rgba(255,51,51,0.5); }
+
+    .price-card .desc { color: var(--brand-text-base); margin-bottom: 2rem; display: block; line-height: 1.5; }
+    .price-card.popular .desc { color: #ffcccc; font-weight: 600; }
+
     .price-card ul { list-style: none; margin-bottom: 3rem; }
-    .price-card li { margin-bottom: 1rem; color: #e0e0e0; display: flex; align-items: center; gap: 10px; }
+    .price-card li { margin-bottom: 1rem; color: #e0e0e0; display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; }
     .price-card li::before { content: '✓'; color: var(--brand-leaf-green); font-weight: bold; }
+    .price-card.popular li::before { color: #ff3333; }
 
     .price-btn { display: block; width: 100%; padding: 1rem; text-align: center; background: rgba(30, 144, 255, 0.1); border: 2px solid var(--brand-accent-blue); color: var(--brand-white); border-radius: 8px; font-weight: 800; text-decoration: none; transition: 0.3s; }
-    .price-card.popular .price-btn { background: var(--brand-bulb-gold); border-color: var(--brand-bulb-gold); color: black; }
     .price-card .price-btn:hover { background: var(--brand-accent-blue); box-shadow: 0 5px 15px rgba(30, 144, 255, 0.4); }
-    .price-card.popular .price-btn:hover { background: #e09b1a; box-shadow: 0 5px 15px var(--brand-gold-glow); }
+
+    /* Aggressive Button Styling */
+    .price-card.popular .price-btn { background: #cc0000; border-color: #ff3333; color: white; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
+    .price-card.popular .price-btn:hover { background: #ff0000; box-shadow: 0 10px 25px rgba(255, 51, 51, 0.6); transform: translateY(-2px); }
 
     /* 8. MENTOR SECTION */
     .mentor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; background: rgba(30, 144, 255, 0.03); border: 1px solid rgba(30, 144, 255, 0.1); padding: 4rem; border-radius: 24px; }
@@ -725,12 +753,12 @@
 
     <div class="ticker-wrap">
         <div class="ticker">
-            <span class="ticker-item">🏆 <span>20+ Years</span> Excellence Legacy</span>
+            <span class="ticker-item" style="color: #ff3333; text-shadow: 0 0 20px rgba(255, 51, 51, 0.6);">🚨 <span>DROPPER BATCH STARTS 1ST JULY</span> 🚨</span>
             <span class="ticker-item highlight">🧬 <span>5000+</span> Selections in NEET</span>
             <span class="ticker-item">📈 <span>95%+</span> Average Board Score</span>
-            <span class="ticker-item highlight">🏆 <span>20+ Years</span> Excellence Legacy</span>
-            <span class="ticker-item">🧬 <span>5000+</span> Selections in NEET</span>
-            <span class="ticker-item highlight">📈 <span>95%+</span> Average Board Score</span>
+            <span class="ticker-item" style="color: #ff3333; text-shadow: 0 0 20px rgba(255, 51, 51, 0.6);">🚨 <span>DROPPER BATCH STARTS 1ST JULY</span> 🚨</span>
+            <span class="ticker-item highlight">🧬 <span>5000+</span> Selections in NEET</span>
+            <span class="ticker-item">📈 <span>95%+</span> Average Board Score</span>
         </div>
     </div>
 
@@ -837,44 +865,44 @@
 
     <section id="courses" class="section">
         <div class="section-header">
-            <h2>Select Your Target Batch</h2>
-            <p>Admissions closing shortly for the next session.</p>
+            <h2>Secure Your Seat. <span style="color: #ff3333;">Next Batch: July 1st</span></h2>
+            <p>We do not take mid-session entries. Lock in your spot before the curriculum begins.</p>
         </div>
 
         <div class="pricing-grid">
             <div class="price-card">
                 <h3>Class 11th Base</h3>
-                <span class="desc">Build the ultimate foundation.</span>
+                <span class="desc">Build the ultimate foundation before the pressure hits.</span>
                 <ul>
                     <li>Plant & Human Physiology Mastery</li>
                     <li>Live 3D Interactive Sessions</li>
                     <li>Weekly Concept Check Tests</li>
                 </ul>
-                <a href="https://wa.me/919896490308?text=Hello%20Dr.%20Raghuvanshi,%20I%20would%20like%20to%20know%20more%20about%20Bio%20Gyan%20Classes." class="price-btn">Enroll Now</a>
+                <a href="https://wa.me/919896490308?text=Hello%20Dr.%20Raghuvanshi,%20I%20am%20interested%20in%20the%2011th%20Base%20Batch." class="price-btn">Enroll for 11th</a>
             </div>
 
             <div class="price-card popular">
-                <div class="price-badge">NEET FOCUS</div>
+                <div class="price-badge">🚨 STARTS 1ST JULY</div>
                 <h3>The Ultimate Dropper</h3>
-                <span class="desc">Aggressive rank-boosting curriculum.</span>
+                <span class="desc">No distractions. Just pure, aggressive rank-boosting for your final attempt.</span>
                 <ul>
-                    <li>Complete 11th + 12th Syllabus</li>
-                    <li>Daily Practice Papers (DPPs)</li>
-                    <li>All India Mock Test Series</li>
-                    <li>Negative Marking Strategy Docs</li>
+                    <li><strong>Intense Focus:</strong> Complete 11th + 12th Rapid Syllabus Completion</li>
+                    <li><strong>Daily Rigor:</strong> Advanced DPPs & Negative Marking Audits</li>
+                    <li><strong>Direct Access:</strong> VIP Mentorship directly with Dr. Raghuvanshi</li>
+                    <li><strong>Exam Simulation:</strong> All India Level Hardcore Mock Series</li>
                 </ul>
-                <a href="https://wa.me/919896490308?text=Hello%20Dr.%20Raghuvanshi,%20I%20would%20like%20to%20know%20more%20about%20Bio%20Gyan%20Classes." class="price-btn">Enroll Now</a>
+                <a href="https://wa.me/919896490308?text=URGENT:%20Hello%20Dr.%20Raghuvanshi,%20I%20want%20to%20secure%20my%20seat%20for%20the%20Dropper%20Batch%20starting%201st%20July." class="price-btn">Claim Your Seat Now</a>
             </div>
 
             <div class="price-card">
                 <h3>Class 12th Boards</h3>
-                <span class="desc">Secure 95%+ in Boards.</span>
+                <span class="desc">Secure 95%+ in Boards while maintaining NEET rhythm.</span>
                 <ul>
                     <li>Genetics & Ecology Deep-Dive</li>
-                    <li>Previous Year Question Bank</li>
+                    <li>Previous Year Question Bank Breakdown</li>
                     <li>Subjective Answer Writing Checks</li>
                 </ul>
-                <a href="https://wa.me/919896490308?text=Hello%20Dr.%20Raghuvanshi,%20I%20would%20like%20to%20know%20more%20about%20Bio%20Gyan%20Classes." class="price-btn">Enroll Now</a>
+                <a href="https://wa.me/919896490308?text=Hello%20Dr.%20Raghuvanshi,%20I%20am%20interested%20in%20the%2012th%20Boards%20Batch." class="price-btn">Enroll for 12th</a>
             </div>
         </div>
     </section>
@@ -1084,15 +1112,26 @@
             }, 800);
         });
 
-        // 2. DYNAMIC SOCIAL PROOF NOTIFICATION ENGINE
-        const studentNames = ["Aarav Sharma", "Ananya Iyer", "Rohan Verma", "Diya Patel", "Ishaan Kapoor", "Meera Nair", "Aditya Joshi", "Sneha Reddy", "Kabir Malhotra", "Kriti Saxena"];
+        // 2. ORGANIC SOCIAL PROOF NOTIFICATION ENGINE
+        const studentNames = ["Aarav Sharma", "Ananya Iyer", "Rohan Verma", "Diya Patel", "Ishaan Kapoor", "Meera Nair", "Aditya Joshi", "Sneha Reddy", "Kabir Malhotra", "Kriti Saxena", "Pooja Desai", "Vikram Singh"];
         const batchSelections = ["unlocked the Free Masterclass", "downloaded the NCERT Line Decoder Notes", "reserved a spot for the NEET Booster batch", "joined the 11th Foundation demo session"];
-        const timeIntervals = ["just now", "2 minutes ago", "5 minutes ago", "1 minute ago", "4 minutes ago"];
+        const timeIntervals = ["just now", "2 minutes ago", "5 minutes ago", "1 minute ago", "3 minutes ago"];
+
+        // Memory pool to prevent repeating names
+        let availableNames = [...studentNames];
 
         function triggerDynamicNotification() {
             const toast = document.getElementById('fomoToast');
 
-            const randomName = studentNames[Math.floor(Math.random() * studentNames.length)];
+            // Refill the pool if all names have been shown
+            if (availableNames.length === 0) {
+                availableNames = [...studentNames];
+            }
+
+            // Pluck a unique name from the pool
+            const nameIndex = Math.floor(Math.random() * availableNames.length);
+            const randomName = availableNames.splice(nameIndex, 1)[0];
+
             const randomBatch = batchSelections[Math.floor(Math.random() * batchSelections.length)];
             const randomTime = timeIntervals[Math.floor(Math.random() * timeIntervals.length)];
 
@@ -1107,14 +1146,19 @@
             toast.style.opacity = '1';
             toast.style.transform = 'translateY(0)';
 
+            // Hide the toast after 5 seconds
             setTimeout(() => {
                 toast.style.transform = 'translateY(100px)';
                 toast.style.opacity = '0';
             }, 5000);
+
+            // Calculate a random organic delay between 35 and 55 seconds for the NEXT notification
+            const nextDelay = Math.floor(Math.random() * (55000 - 35000 + 1)) + 35000;
+            setTimeout(triggerDynamicNotification, nextDelay);
         }
 
-        setTimeout(triggerDynamicNotification, 3000);
-        setInterval(triggerDynamicNotification, 15000);
+        // Fire the very first notification 4 seconds after the page loads
+        setTimeout(triggerDynamicNotification, 4000);
 
         // 3. HIGH-PERFORMANCE IMAGE PRELOADER
         const imagesToPreload = [
