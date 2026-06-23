@@ -38,10 +38,62 @@
         overflow-x: hidden;
     }
 
+    /* PERSISTENT URGENCY BANNER */
+    .urgency-banner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(90deg, #0a0e14 0%, #330000 25%, #cc0000 50%, #330000 75%, #0a0e14 100%);
+        background-size: 200% auto;
+        color: var(--brand-white);
+        text-align: center;
+        padding: 10px 15px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        z-index: 2000;
+        border-bottom: 1px solid rgba(255, 51, 51, 0.4);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 0 15px rgba(204, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        animation: red-alert-shift 4s linear infinite;
+    }
+
+    @keyframes red-alert-shift { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
+
+    .urgency-banner strong { color: var(--brand-bulb-gold); font-weight: 900; letter-spacing: 0.5px; }
+
+    .urgency-btn {
+        background: #ff3333;
+        color: #ffffff;
+        padding: 4px 18px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-size: 0.8rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 0 10px rgba(255, 51, 51, 0.4);
+        transition: 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        border: 1px solid #ff4d4d;
+    }
+
+    .urgency-btn:hover {
+        background: var(--brand-bulb-gold);
+        color: #000;
+        border-color: var(--brand-bulb-gold);
+        box-shadow: 0 0 15px var(--brand-gold-glow);
+        transform: scale(1.05);
+    }
+
+    .mobile-text { display: none; }
+
     /* 1. FLOATING GLASS NAV */
     nav {
         position: fixed;
-        top: 20px;
+        top: 60px;
         left: 50%;
         transform: translateX(-50%);
         width: 90%;
@@ -626,9 +678,60 @@
 
     /* Viral Social Proof Toast */
     .fomo-toast { position: fixed; bottom: 30px; left: 30px; background: rgba(13, 17, 23, 0.95); border: 1px solid rgba(50, 205, 50, 0.3); border-left: 4px solid var(--brand-leaf-green); padding: 12px 20px; border-radius: 8px; display: flex; align-items: center; gap: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 1000; opacity: 0; transform: translateY(100px); transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease; pointer-events: none; }
-    .toast-icon { background: rgba(50, 205, 50, 0.1); color: var(--brand-leaf-green); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
-    .toast-text p { margin: 0; font-size: 0.85rem; color: #fff; text-align: left; }
-    .toast-text span { font-size: 0.7rem; color: var(--brand-text-base); display: block; text-align: left; }
+
+    /* WhatsApp Lead Capture Modal */
+    .wa-modal-overlay {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(5, 7, 10, 0.85); backdrop-filter: blur(8px);
+        z-index: 9999; display: flex; align-items: center; justify-content: center;
+        opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+    }
+    .wa-modal-overlay.active { opacity: 1; pointer-events: all; }
+    .wa-modal-box {
+        background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 20px; padding: 2.5rem; width: 90%; max-width: 450px;
+        position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+        transform: translateY(20px); transition: transform 0.3s ease;
+    }
+    .wa-modal-overlay.active .wa-modal-box { transform: translateY(0); }
+    .close-modal {
+        position: absolute; top: 15px; right: 20px; color: var(--brand-text-base);
+        font-size: 1.8rem; cursor: pointer; transition: 0.3s;
+    }
+    .close-modal:hover { color: var(--brand-white); }
+    .wa-modal-box h3 { color: var(--brand-white); font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .wa-modal-box p { color: var(--brand-text-base); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .wa-form-group { margin-bottom: 1rem; }
+    .wa-form-group input, .wa-form-group select {
+        width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+        padding: 12px 15px; border-radius: 8px; color: white; outline: none; font-size: 1rem;
+    }
+    .wa-form-group select {
+        appearance: none;
+        -webkit-appearance: none;
+        cursor: pointer;
+        /* Custom white chevron arrow */
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+        background-size: 16px;
+        padding-right: 40px; /* Prevents text from overlapping the arrow */
+    }
+
+    /* Forces the expanded dropdown list to match the dark theme */
+    .wa-form-group select option {
+        background-color: #0d1117;
+        color: #ffffff;
+        font-size: 1rem;
+    }
+
+    .wa-form-group input:focus, .wa-form-group select:focus { border-color: var(--brand-accent-blue); }
+    .wa-submit-btn {
+        width: 100%; background: #25d366; color: white; border: none; padding: 14px;
+        border-radius: 8px; font-weight: 800; font-size: 1.1rem; cursor: pointer;
+        display: flex; justify-content: center; align-items: center; gap: 8px; transition: 0.3s;
+    }
+    .wa-submit-btn:hover { background: #1ebe57; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); transform: translateY(-2px); }
 
     /* ==========================================================================
        📱 COMPREHENSIVE MOBILE RESPONSIVENESS OVERRIDES
@@ -643,13 +746,19 @@
     }
 
     @media (max-width: 768px) {
+        /* Responsive Banner Logic */
+        .desktop-text { display: none; }
+        .mobile-text { display: inline; font-size: 0.85rem; }
+        .urgency-banner { padding: 8px 10px; gap: 10px; }
+        .urgency-btn { padding: 4px 12px; font-size: 0.75rem; white-space: nowrap; }
+
         /* General Spacing Reductions */
         .section { padding: 4rem 5% !important; } /* Stops huge dead spaces on mobile */
         .section-header h2 { font-size: 2rem; }
         .section-header { margin-bottom: 2.5rem; }
 
         /* Navigation Condensing */
-        nav { padding: 0.6rem 1rem; width: 95%; top: 15px; }
+        nav { padding: 0.6rem 1rem; width: 95%; top: 55px; } /* Pushed down for sticky banner */
         .logo-img { width: 45px; height: 45px; }
         .logo-text .brand-name-short { font-size: 1.2rem; }
         .logo-text .brand-name-sub { display: none; } /* Hide sub-text to save space */
@@ -699,6 +808,12 @@
 </head>
 <body>
 
+    <div class="urgency-banner">
+        <span class="desktop-text">🚨 <strong>URGENT:</strong> Ultimate Dropper Batch begins <strong>July 1st</strong>. Seats are filling fast!</span>
+        <span class="mobile-text">🚨 Dropper Batch Starts <strong>July 1st</strong>!</span>
+        <a href="#courses" class="urgency-btn">Secure Seat</a>
+    </div>
+
     <nav>
         <a href="#" class="logo-container">
             <img src="Biogyan Logo.jpeg" alt="BioGyan Logo" class="logo-img">
@@ -741,7 +856,7 @@
             </div>
             <div style="text-align: left; font-size: 0.8rem; color: var(--brand-bulb-gold); margin-top: 8px; display: flex; align-items: center; gap: 5px; font-weight: 600;">
                 <span style="display: inline-block; width: 8px; height: 8px; background: #ff3333; border-radius: 50%; animation: pulse-red 1.5s infinite;"></span>
-                Only 12 spots left for Sunday's Masterclass
+                Only Few spots left for Sunday's Masterclass
             </div>
         </form>
 
@@ -838,7 +953,7 @@
                     <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 10px 20px; border-radius: 12px; color: #ccc; font-size: 0.9rem; font-weight: 600; backdrop-filter: blur(5px);">🎯 Rank-Boosting Strategy</div>
                 </div>
 
-                <a href="https://wa.me/919896490308?text=Hello%20Dr.%20Raghuvanshi,%20I%20would%20like%20to%20know%20more%20about%20Bio%20Gyan%20Classes." style="background: var(--brand-accent-blue); color: var(--brand-white); padding: 1.2rem 2.8rem; border-radius: 50px; font-size: 1.1rem; font-weight: 800; text-decoration: none; display: inline-block; box-shadow: 0 10px 25px rgba(30, 144, 255, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 35px rgba(30, 144, 255, 0.5)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(30, 144, 255, 0.3)';">Speak With Teacher Directly</a>
+                <a href="javascript:openWaModal('Parent-Teacher Connect')" style="background: var(--brand-accent-blue); color: var(--brand-white); padding: 1.2rem 2.8rem; border-radius: 50px; font-size: 1.1rem; font-weight: 800; text-decoration: none; display: inline-block; box-shadow: 0 10px 25px rgba(30, 144, 255, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 35px rgba(30, 144, 255, 0.5)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(30, 144, 255, 0.3)';">Speak With Teacher Directly</a>
             </div>
         </div>
     </section>
@@ -878,7 +993,7 @@
                     <li>Live 3D Interactive Sessions</li>
                     <li>Weekly Concept Check Tests</li>
                 </ul>
-                <a href="https://wa.me/919896490308?text=Hello%20Dr.%20Raghuvanshi,%20I%20am%20interested%20in%20the%2011th%20Base%20Batch." class="price-btn">Enroll for 11th</a>
+                <a href="javascript:openWaModal('11th Base Batch')" class="price-btn">Enroll for 11th</a>
             </div>
 
             <div class="price-card popular">
@@ -891,7 +1006,7 @@
                     <li><strong>Direct Access:</strong> VIP Mentorship directly with Dr. Raghuvanshi</li>
                     <li><strong>Exam Simulation:</strong> All India Level Hardcore Mock Series</li>
                 </ul>
-                <a href="https://wa.me/919896490308?text=URGENT:%20Hello%20Dr.%20Raghuvanshi,%20I%20want%20to%20secure%20my%20seat%20for%20the%20Dropper%20Batch%20starting%201st%20July." class="price-btn">Claim Your Seat Now</a>
+                <a href="javascript:openWaModal('Ultimate Dropper Batch (Starts July 1st)')" class="price-btn">Claim Your Seat Now</a>
             </div>
 
             <div class="price-card">
@@ -902,7 +1017,7 @@
                     <li>Previous Year Question Bank Breakdown</li>
                     <li>Subjective Answer Writing Checks</li>
                 </ul>
-                <a href="https://wa.me/919896490308?text=Hello%20Dr.%20Raghuvanshi,%20I%20am%20interested%20in%20the%2012th%20Boards%20Batch." class="price-btn">Enroll for 12th</a>
+                <a href="javascript:openWaModal('12th Boards Batch')" class="price-btn">Enroll for 12th</a>
             </div>
         </div>
     </section>
@@ -1062,10 +1177,11 @@
 
             <div class="footer-social">
                 <h3>Connect With Us</h3>
-                <a href="#">Instagram (Viral Reels)</a>
-                <a href="#">YouTube Channel</a>
-                <a href="#">WhatsApp Support</a>
+                <a href="https://www.instagram.com/biogyan08/" target="_blank">Instagram (Viral Reels)</a>
+                <a href="https://www.youtube.com/@biogyan08" target="_blank">YouTube Channel</a>
+                <a href="javascript:openWaModal('General Footer Inquiry')">WhatsApp Support</a>
             </div>
+
         </div>
 
         <div class="footer-bottom">
@@ -1075,41 +1191,73 @@
 
     <div id="fomoToast" class="fomo-toast"></div>
 
-    <a href="https://wa.me/919896490308?text=Hello%20Dr.%20Raghuvanshi,%20I%20would%20like%20to%20know%20more%20about%20Bio%20Gyan%20Classes." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <a href="javascript:openWaModal('General Inquiry')" class="whatsapp-float" aria-label="Chat on WhatsApp">
         <svg viewBox="0 0 32 32" width="35" height="35" fill="white">
             <path d="M16.002 0c-8.835 0-16 7.163-16 16 0 2.827.737 5.485 2.035 7.825L.5 31.5l7.917-1.468c2.28 1.157 4.86 1.805 7.585 1.805 8.834 0 16-7.165 16-16s-7.166-16-16-16zm7.98 22.846c-.333.94-1.745 1.705-2.587 1.847-.704.118-1.61.196-2.585-.126-.583-.195-1.332-.47-2.31-.885-4.14-1.76-6.815-6.02-7.02-6.295-.206-.275-1.68-2.235-1.68-4.26 0-2.025 1.055-3.018 1.43-3.41.376-.39.816-.488 1.087-.488.272 0 .543.003.784.015.253.012.593-.095.928.714.354.856 1.208 2.946 1.316 3.16.11.215.18.467.045.74-.136.275-.205.44-.41.686-.204.246-.425.53-.614.715-.206.204-.422.427-.186.83.236.405 1.048 1.733 2.25 2.8 1.55 1.378 2.85 1.8 3.257 1.996.406.196.643.165.885-.11.242-.275 1.04-1.21 1.314-1.624.273-.414.545-.345.91-.205.365.138 2.31 1.09 2.705 1.288.396.196.66.294.756.46.096.166.096.96-.237 1.9z"/>
         </svg>
     </a>
 
+    <div id="waModal" class="wa-modal-overlay">
+        <div class="wa-modal-box">
+            <span class="close-modal" onclick="closeWaModal()">&times;</span>
+            <h3>Start WhatsApp Chat</h3>
+            <p>Please provide basic details so Dr. Raghuvanshi can assist you efficiently.</p>
+            <form id="waRegForm">
+                <input type="hidden" id="waContext" value="General Inquiry">
+                <div class="wa-form-group">
+                    <input type="text" id="waName" placeholder="Student Name" required>
+                </div>
+                <div class="wa-form-group">
+                    <select id="waClass" required>
+                        <option value="" disabled selected>Select Target Batch</option>
+                        <option value="Class 11 Foundation">Class 11 Foundation</option>
+                        <option value="Class 12 Boards">Class 12 Boards</option>
+                        <option value="Dropper (NEET)">Dropper (NEET)</option>
+                        <option value="Parent/Guardian">I am a Parent/Guardian</option>
+                    </select>
+                </div>
+                <div class="wa-form-group">
+                    <input type="text" id="waState" placeholder="City / State" required>
+                </div>
+                <div class="wa-form-group">
+                    <input type="tel" id="waMobile" placeholder="Your Mobile Number" required>
+                </div>
+                <button type="submit" class="wa-submit-btn">
+                    <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor">
+                        <path d="M16.002 0c-8.835 0-16 7.163-16 16 0 2.827.737 5.485 2.035 7.825L.5 31.5l7.917-1.468c2.28 1.157 4.86 1.805 7.585 1.805 8.834 0 16-7.165 16-16s-7.166-16-16-16zm7.98 22.846c-.333.94-1.745 1.705-2.587 1.847-.704.118-1.61.196-2.585-.126-.583-.195-1.332-.47-2.31-.885-4.14-1.76-6.815-6.02-7.02-6.295-.206-.275-1.68-2.235-1.68-4.26 0-2.025 1.055-3.018 1.43-3.41.376-.39.816-.488 1.087-.488.272 0 .543.003.784.015.253.012.593-.095.928.714.354.856 1.208 2.946 1.316 3.16.11.215.18.467.045.74-.136.275-.205.44-.41.686-.204.246-.425.53-.614.715-.206.204-.422.427-.186.83.236.405 1.048 1.733 2.25 2.8 1.55 1.378 2.85 1.8 3.257 1.996.406.196.643.165.885-.11.242-.275 1.04-1.21 1.314-1.624.273-.414.545-.345.91-.205.365.138 2.31 1.09 2.705 1.288.396.196.66.294.756.46.096.166.096.96-.237 1.9z"/>
+                    </svg>
+                    Continue to Chat
+                </button>
+            </form>
+        </div>
+    </div>
+
     <script>
-        // 1. LEAD CAPTURE PIPELINE
+        // 1. DIRECT WHATSAPP DEMO REQUEST PIPELINE
         document.getElementById('demoForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
             const btn = document.getElementById('submitBtn');
             const waNumber = document.getElementById('waNumber').value;
-            const form = document.getElementById('demoForm');
-            const successMsg = document.getElementById('successMessage');
 
-            btn.innerHTML = 'Unlocking...';
+            // Visual feedback while connecting
+            btn.innerHTML = 'Connecting...';
             btn.style.opacity = '0.7';
             btn.style.pointerEvents = 'none';
 
+            // Clean, professional text formatting (Zero emoji corruption risk)
+            const message = encodeURIComponent(`Hello Dr. Raghuvanshi, I am reaching out regarding: *Free Demo Request*\n\n*Provided Details:*\n- WhatsApp Number: ${waNumber}\n\nPlease share the free masterclass demo link with me.`);
+
+            // Launch WhatsApp immediately after a tiny, satisfying processing delay
             setTimeout(() => {
-                form.style.display = 'none';
-                successMsg.style.display = 'block';
-                successMsg.style.opacity = '0';
+                window.open(`https://wa.me/919896490308?text=${message}`, '_blank');
 
-                setTimeout(() => {
-                    successMsg.style.transition = 'opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
-                    successMsg.style.opacity = '1';
-                }, 20);
-
-                console.log("------------------------------------------");
-                console.log("[DATA CAPTURED]: WhatsApp String Saved -> " + waNumber);
-                console.log("Status: Route execution successful inside tracker lifecycle.");
-                console.log("------------------------------------------");
-            }, 800);
+                // Reset the form and button back to default state
+                btn.innerHTML = 'Unlock Free Demo';
+                btn.style.opacity = '1';
+                btn.style.pointerEvents = 'all';
+                document.getElementById('demoForm').reset();
+            }, 400);
         });
 
         // 2. ORGANIC SOCIAL PROOF NOTIFICATION ENGINE
@@ -1187,6 +1335,36 @@
 
             masterImg.src = newSrc;
         }
+
+        // 5. SMART WHATSAPP REGISTRATION INTERCEPTOR
+        function openWaModal(context) {
+            document.getElementById('waContext').value = context;
+            document.getElementById('waModal').classList.add('active');
+        }
+
+        function closeWaModal() {
+            document.getElementById('waModal').classList.remove('active');
+        }
+
+        document.getElementById('waRegForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('waName').value;
+            const targetClass = document.getElementById('waClass').value;
+            const state = document.getElementById('waState').value;
+            const mobile = document.getElementById('waMobile').value;
+            const context = document.getElementById('waContext').value;
+
+            // Clean, professional text formatting for the main modal as well
+            const message = encodeURIComponent(`Hello Dr. Raghuvanshi, I am reaching out regarding: *${context}*\n\n*Student Details:*\n- Name: ${name}\n- Target: ${targetClass}\n- Location: ${state}\n- Contact: ${mobile}\n\nPlease let me know the next steps.`);
+
+            // Launch WhatsApp with the pre-filled form data
+            window.open(`https://wa.me/919896490308?text=${message}`, '_blank');
+
+            // Cleanup and close
+            closeWaModal();
+            this.reset();
+        });
     </script>
 </body>
 </html>
