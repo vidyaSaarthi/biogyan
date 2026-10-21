@@ -761,7 +761,15 @@
         nav { padding: 0.6rem 1rem; width: 95%; top: 55px; } /* Pushed down for sticky banner */
         .logo-img { width: 45px; height: 45px; }
         .logo-text .brand-name-short { font-size: 1.2rem; }
-        .logo-text .brand-name-sub { display: none; } /* Hide sub-text to save space */
+
+        .logo-text .brand-name-sub {
+            display: block;
+            font-size: 0.6rem;
+            line-height: 1.2;
+            letter-spacing: 0;
+            max-width: 150px;
+        }
+
         .header-socials { padding-right: 0.8rem; gap: 10px; border-right: none; }
         .header-contact span { display: none; } /* Hide phone number text, keep icon */
         .nav-actions { gap: 1rem; }
@@ -809,8 +817,8 @@
 <body>
 
     <div class="urgency-banner">
-        <span class="desktop-text">🚨 <strong>URGENT:</strong> Ultimate Dropper Batch begins <strong>July 1st</strong>. Seats are filling fast!</span>
-        <span class="mobile-text">🚨 Dropper Batch Starts <strong>July 1st</strong>!</span>
+        <span class="desktop-text">🚨 <strong>REGISTRATION OPEN:</strong> NEET/Basic Biology Classes for <strong>Session 2027-28</strong> - 11th/12th & Test Series</span>
+        <span class="mobile-text">🚨 REGISTRATION OPEN <strong>Session 2027-28</strong></span>
         <a href="#courses" class="urgency-btn">Secure Seat</a>
     </div>
 
@@ -818,8 +826,8 @@
         <a href="#" class="logo-container">
             <img src="Biogyan Logo.jpeg" alt="BioGyan Logo" class="logo-img">
             <div class="logo-text">
-                <span class="brand-name-short">Bio<span>Gyan</span></span>
-                <span class="brand-name-sub">Dr. V.S. Raghuvanshi's Classes</span>
+                <span class="brand-name-short"><span>BioGyan Classes</span></span>
+                <span class="brand-name-sub">Dr. V.S. Raghuvanshi - Ph.D (Gold Medalist)</span>
             </div>
         </a>
 
@@ -868,10 +876,10 @@
 
     <div class="ticker-wrap">
         <div class="ticker">
-            <span class="ticker-item" style="color: #ff3333; text-shadow: 0 0 20px rgba(255, 51, 51, 0.6);">🚨 <span>DROPPER BATCH STARTS 1ST JULY</span> 🚨</span>
+            <span class="ticker-item" style="color: #ff3333; text-shadow: 0 0 20px rgba(255, 51, 51, 0.6);">🚨 <span>REGISTRATION OPEN FOR SESSION 2027-28</span> 🚨</span>
             <span class="ticker-item highlight">🧬 <span>5000+</span> Selections in NEET</span>
             <span class="ticker-item">📈 <span>95%+</span> Average Board Score</span>
-            <span class="ticker-item" style="color: #ff3333; text-shadow: 0 0 20px rgba(255, 51, 51, 0.6);">🚨 <span>DROPPER BATCH STARTS 1ST JULY</span> 🚨</span>
+            <span class="ticker-item" style="color: #ff3333; text-shadow: 0 0 20px rgba(255, 51, 51, 0.6);">🚨 <span>REGISTRATION OPEN FOR SESSION 2027-28</span> 🚨</span>
             <span class="ticker-item highlight">🧬 <span>5000+</span> Selections in NEET</span>
             <span class="ticker-item">📈 <span>95%+</span> Average Board Score</span>
         </div>
@@ -980,7 +988,7 @@
 
     <section id="courses" class="section">
         <div class="section-header">
-            <h2>Secure Your Seat. <span style="color: #ff3333;">Next Batch: July 1st</span></h2>
+            <h2>Secure Your Seat.</h2>
             <p>We do not take mid-session entries. Lock in your spot before the curriculum begins.</p>
         </div>
 
@@ -996,19 +1004,6 @@
                 <a href="javascript:openWaModal('11th Base Batch')" class="price-btn">Enroll for 11th</a>
             </div>
 
-            <div class="price-card popular">
-                <div class="price-badge">🚨 STARTS 1ST JULY</div>
-                <h3>The Ultimate Dropper</h3>
-                <span class="desc">No distractions. Just pure, aggressive rank-boosting for your final attempt.</span>
-                <ul>
-                    <li><strong>Intense Focus:</strong> Complete 11th + 12th Rapid Syllabus Completion</li>
-                    <li><strong>Daily Rigor:</strong> Advanced DPPs & Negative Marking Audits</li>
-                    <li><strong>Direct Access:</strong> VIP Mentorship directly with Dr. Raghuvanshi</li>
-                    <li><strong>Exam Simulation:</strong> All India Level Hardcore Mock Series</li>
-                </ul>
-                <a href="javascript:openWaModal('Ultimate Dropper Batch (Starts July 1st)')" class="price-btn">Claim Your Seat Now</a>
-            </div>
-
             <div class="price-card">
                 <h3>Class 12th Boards</h3>
                 <span class="desc">Secure 95%+ in Boards while maintaining NEET rhythm.</span>
@@ -1019,6 +1014,21 @@
                 </ul>
                 <a href="javascript:openWaModal('12th Boards Batch')" class="price-btn">Enroll for 12th</a>
             </div>
+
+            <div class="price-card">
+<!--                <div class="price-badge">🚨 STARTS 1ST AUGUST</div>-->
+                <h3>The Ultimate Dropper</h3>
+<!--                <span class="desc">No distractions. Just pure, aggressive rank-boosting for your final attempt.</span>-->
+                <ul>
+                    <li><strong>Intense Focus:</strong> Complete 11th + 12th Rapid Syllabus Completion</li>
+                    <li><strong>Daily Rigor:</strong> Advanced DPPs & Negative Marking Audits</li>
+                    <li><strong>Direct Access:</strong> VIP Mentorship directly with Dr. Raghuvanshi</li>
+                    <li><strong>Exam Simulation:</strong> All India Level Hardcore Mock Series</li>
+                </ul>
+                <a href="javascript:openWaModal('Ultimate Dropper Batch (Starts August 1st)')" class="price-btn">Claim Your Seat Now</a>
+            </div>
+
+
         </div>
     </section>
 
